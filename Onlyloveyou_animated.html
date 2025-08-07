@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A gift for my little one</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    /* Custom animation for fade-in and scale */
+    @keyframes fadeInScale {
+      0% {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    .fade-in-scale {
+      animation: fadeInScale 0.5s ease-out forwards;
+    }
+  </style>
+</head>
+<body class="bg-blue-100 flex items-center justify-center min-h-screen p-4">
+  <div class="bg-gradient-to-r from-blue-200 to-blue-400 p-8 md:p-12 rounded-2xl shadow-xl max-w-3xl w-full">
+    <h1 class="text-3xl md:text-4xl font-extrabold text-blue-800 mb-6 text-center">
+      Hello, bạn nhỏ của mình
+    </h1>
+
+    <p class="text-gray-900 text-lg md:text-xl leading-relaxed mb-4">
+      Đây là project đầu tiên mà mình tập code cho cậu thế nên chắc là nó cũng hơi sơ sàiii.
+      Cơ mà tình cảm của mình dành cho cậu thì nó hông có sơ sài một xíu nào đâu á.
+      Mặc dù chúng mình mới quen nhau được 100 ngày (suýt soát),
+      nhưng bọn mình cũng đã dành ít nhiều tình cảm cho nhau được hơn 3000 ngày rồi nhỉ.
+    </p>
+
+    <p class="text-gray-900 text-lg md:text-xl leading-relaxed mb-4">
+      Mình muốn nhắn nhủ tới cậu rằng dù rằng sắp tới mình có thể sẽ có những sự bận bịu ít nhiều
+      vì lịch học tập, nghiên cứu và networking sẽ là khá dày đặc,
+      và mình có thể không dành được quá nhiều thời gian cho cậu như bây giờ,
+      nhưng mong cậu đừng bao giờ nghi ngờ về tình cảm của chúng mình,
+      về mình cũng như về bản thân cậu.
+    </p>
+
+    <p class="text-gray-900 text-lg md:text-xl font-bold leading-relaxed mb-4">
+      Hãy luôn nhớ rằng người yêu cậu nhiều nhất chính là mình, và sẽ luôn là mình
+    </p>
+
+    <button id="show-image-btn" class="mt-8 px-6 py-3 bg-pink-500 text-white font-bold rounded-full transition-all duration-300 hover:bg-pink-600 shadow-md transform hover:scale-105">
+      Show photos
+    </button>
+
+    <div class="image-container flex flex-col items-center gap-5 mt-5">
+      <img class="hidden rounded-xl shadow" src="att.Gz2399tgQ34vKjQwk8s7bmmIAvflShzkVBR-BqRe0tM.jpg" alt="A photo of us">
+      <img class="hidden rounded-xl shadow" src="att.kn8L40irsi67s43OL2jwmb82tl_jA6W2ktFm6csXyVY.jpg" alt="A photo of us">
+      <img class="hidden rounded-xl shadow" src="att.Gb6xxteBf04USDYOAUtWuRaTTnTzbBaHHb5kDTc8Wtc.dat.JPEG" alt="A photo of us">
+      <img class="hidden rounded-xl shadow" src="IMG_4567.jpg" alt="A photo of us">
+      <img class="hidden rounded-xl shadow" src="IMG_2479.jpg" alt="A photo of us">
+    </div>
+  </div>
+
+  <audio id="bg-music" autoplay loop>
+    <source src="G-DRAGON - TAKE ME (Official Audio).mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const images = document.querySelectorAll('.image-container img');
+    const showImageBtn = document.getElementById('show-image-btn');
+    let currentImageIndex = 0;
+
+    showImageBtn.addEventListener('click', () => {
+      if (currentImageIndex < images.length) {
+        const img = images[currentImageIndex];
+        img.classList.remove('hidden');
+        img.classList.add('fade-in-scale');
+        currentImageIndex++;
+      }
+      if (currentImageIndex >= images.length) {
+        showImageBtn.classList.add('hidden');
+      }
+    });
+  </script>
+</body>
+</html>
